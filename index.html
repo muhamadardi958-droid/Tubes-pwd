@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situs Gabungan tiga website</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blibli: {
+                            blue: '#0095DA',
+                            darkBlue: '#0072B5',
+                            lightBg: '#F1F5F9'
+                        },
+                      
+                  
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+</head>
+
+    <header class="bg-blibli-blue text-white sticky top-0 z-50 shadow-md">
+        <!-- Top Advantage Bar (Top Mini Nav) -->
+        <div class="bg-blibli-darkBlue text-xs py-1.5 px-4 hidden md:block">
+            <div class="max-w-7xl mx-auto flex justify-between items-center">
+                <div class="flex items-center space-x-6">
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-truck-fast"></i> Gratis Ongkir Tanpa Batas</span>
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield-halved"></i> Jaminan 100% Pasti Ori</span>
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-headset"></i> Layanan 24/7 Care</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="hover:underline">Beli Tiket</a>
+                    <a href="#" class="hover:underline">Mitra Belanja</a>
+                    <a href="#" class="hover:underline">Bantuan</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header Bar -->
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+            <!-- Blibli Logo -->
+            <a href="#" class="flex items-center gap-1 text-2xl font-black tracking-tight text-white shrink-0">
+                <span class="text-3xl"><i class="fa-solid fa-bag-shopping"></i></span>
+                <span>Belanja<span class="text-yellow-300">.com</span></span>
+            </a>
+
+            <!-- Category Button -->
+            <button class="hidden lg:flex items-center gap-2 bg-blibli-darkBlue hover:bg-blue-800 text-white px-3 py-2 rounded-lg text-sm font-semibold transition">
+                <i class="fa-solid fa-grip-vertical"></i>
+                <span>Kategori</span>
+            </button>
+
+            <!-- Search Bar -->
+            <div class="flex-1 max-w-2xl relative">
+                <div class="relative flex items-center">
+                    <input type="text" id="searchInput" placeholder="Cari suku cadang motor KNZ, Busi Double Iridium, Kampas Rem..." 
+                           class="w-full py-2.5 pl-4 pr-12 text-gray-800 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 text-sm shadow-inner">
+                    <button onclick="performSearch()" class="absolute right-1 bg-blibli-blue hover:bg-blibli-darkBlue text-white px-4 py-1.5 rounded-md transition">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- User Action Controls -->
+            <div class="flex items-center gap-4 shrink-0">
+                <!-- Cart Icon with badge -->
+                <button onclick="toggleCartModal()" class="relative p-2 text-white hover:text-yellow-300 transition">
+                    <i class="fa-solid fa-cart-shopping text-2xl"></i>
+                    <span id="cartBadge" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-blibli-blue">0</span>
+                </button>
+
+                <!-- Login / Register Buttons -->
+                <div class="hidden sm:flex items-center gap-2">
+                    <button class="border border-white hover:bg-white hover:text-blibli-blue text-white px-4 py-1.5 rounded-lg text-sm font-semibold transition">
+                        Masuk
+                    </button>
+                    <button class="bg-yellow-400 hover:bg-yellow-300 text-gray-900 px-4 py-1.5 rounded-lg text-sm font-bold shadow transition">
+                        Daftar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        
+
+     <main class="bg-knz-cardBg text-white flex-1 pb-16">
+
+        <!-- Hero Banner KNZ -->
+        <section class="relative bg-gradient-to-r from-knz-blue via-blue-900 to-knz-darkblue overflow-hidden border-b-4 border-yellow-400">
+            <!-- Background Decorative Grid -->
+            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#9333EA_1px,transparent_1px)] [background-size:16px_16px]"></div>
+
+            <div class="max-w-7xl mx-auto px-4 py-12 md:py-20 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+                <!-- Left Text Content -->
+                <div class="w-full md:w-1/2 space-y-6 text-center md:text-left">
+                    <div class="inline-block bg-yellow-400 text-black px-3 py-1 rounded-full text-xs font-black tracking-widest uppercase shadow">
+                        KNZ OJAWAPART OFFICIAL
+                    </div>
+                    <h1 class="text-3xl md:text-5xl font-black tracking-tight leading-tight uppercase text-glow">
+                        DAPATKAN SUKU CADANG <br>
+                        <span class="text-yellow-400">YANG KAMU BUTUHKAN</span> DISINI
+                    </h1>
+                    <p class="text-gray-300 text-sm md:text-base max-w-lg">
+                        Suku cadang alternatif berkualitas tinggi, teruji untuk performa balap maupun harian dengan harga ramah kantong. PUSH YOUR LIMIT!
+                    </p>
+                    <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2">
+                        <a href="#katalog" class="bg-yellow-400 hover:bg-yellow-300 text-black font-extrabold px-6 py-3 rounded-xl shadow-lg transition flex items-center gap-2 text-sm uppercase tracking-wider">
+                            <i class="fa-solid fa-bolt"></i> Belanja Sekarang
+                        </a>
+                        <a href="#katalog" class="border border-purple-400 hover:bg-purple-900 text-white font-semibold px-6 py-3 rounded-xl transition text-sm">
+                            Katalog Produk
+                        </a>
+                    </div>
+                </div>
+    
+    
